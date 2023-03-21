@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['tree']
+
+roboflow:
+  workspace: project
+  project: tree-count-7sr5o
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/project/tree-count-7sr5o/dataset/2
