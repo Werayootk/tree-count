@@ -73,10 +73,16 @@ def process_yolov5(file: UploadFile = File(...)):
     image.filename = name
     classes, converted_img = yolov5(image)
 
+    result = {
+        "prediction": json.dumps(classes),
+        "output": base64_encode_img(converted_img),
+    }
+
     bytes_io = io.BytesIO()
     converted_img.save(name)
     converted_img.save(bytes_io, format="PNG")
-    return Response(bytes_io.getvalue(), media_type="image/png")
+    # return Response(bytes_io.getvalue(), media_type="image/png")
+    return  json.dumps(result)
 
 
 @app.websocket("/yolo_ws/{client_id}")
