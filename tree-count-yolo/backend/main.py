@@ -81,7 +81,7 @@ def process_yolov5(file: UploadFile = File(...)):
     bytes_io = io.BytesIO()
     converted_img.save(name)
     converted_img.save(bytes_io, format="PNG")
-    # return Response(bytes_io.getvalue(), media_type="image/png")
+    #return Response(bytes_io.getvalue(), media_type="image/png")
     return  json.dumps(result)
 
 
