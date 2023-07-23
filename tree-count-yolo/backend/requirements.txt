@@ -13,6 +13,7 @@ tqdm
 tensorboard
 matplotlib
 seaborn
+ultralytics
 
 # -- API
 fastapi
